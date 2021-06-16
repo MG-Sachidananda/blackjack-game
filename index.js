@@ -9,6 +9,7 @@ let bet=0
 let hasBlackJack = false
 let isAlive = false
 let message = ""
+let instruction=document.getElementById("instructions")
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let winningEl=document.getElementById("winnings")
@@ -28,9 +29,7 @@ function getRandomCard() {
         return randomNumber
     }
 }
-if(player.chips<=0){
-    zeroBalance.textContent="If your balance is zero, All profits and losses will be void."
-}
+
 
 function startGame() {
     isAlive = true
@@ -85,6 +84,9 @@ function addBet(){
         playerEl.textContent = player.name + ": $" + player.chips
         count++
     }
+    if(player.chips<=0){
+        zeroBalance.textContent="If your balance is zero, All profits and losses will be void."
+    }
 }
 
 function stopGame(){
@@ -97,4 +99,6 @@ function stopGame(){
     }
     
 }
+
+instruction.textContent="Start the game. If the sum of the two cards is Less than 21, pick a new card. If the sum of the cards are more than 21, you are out. If the sum is 21, you win. You can add the amount you desire.If you win, you get 10 times the bets placed"
 
