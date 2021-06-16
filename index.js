@@ -61,7 +61,7 @@ function renderGame() {
         isAlive = false
         count=0
         bet=0
-        displayBet.textContent="Currently placed Bets Amount = "+ bet
+        displayBet.textContent="Currently placed Bets = "+ bet
     }
     messageEl.textContent = message
 }
