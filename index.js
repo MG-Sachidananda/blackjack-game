@@ -28,9 +28,7 @@ function getRandomCard() {
         return randomNumber
     }
 }
-if(player.chips<=0){
-    zeroBalance.textContent="You dont have balance to play. All profits and losses will be void."
-}
+
 
 function startGame() {
     isAlive = true
@@ -40,6 +38,9 @@ function startGame() {
     sum = firstCard + secondCard
     renderGame()
     winningEl.textContent= ""
+    if(player.chips<=0){
+        zeroBalance.textContent="You dont have balance to play. All profits and losses will be void."
+    }
 }
 
 function renderGame() {
